@@ -119,10 +119,12 @@ def game_hash
   }
 }
 end
+#method to create an array with people hashes
 def people
 game_hash[:away][:players] + game_hash[:home][:players]
 end
 
+#method for returning number of points for a player
 def num_points_scored(name)
   finding = people.find do |person|
     person.fetch(:player_name) == name
@@ -132,6 +134,7 @@ def num_points_scored(name)
   #binding.pry
 end
 
+#returns shoe size of a player
 def shoe_size(name)
   finding = people.find do |person|
     person.fetch(:player_name) == name
@@ -141,11 +144,13 @@ def shoe_size(name)
   #binding.pry
 end
 
+#method for creating a single arrray with both team hashes
 def teams
   game_hash.values_at(:away) + game_hash.values_at(:home)
   #binding.pry
 end
 
+#returns the colors of specified team
 def team_colors(team)
   finding = teams.find do |item|
     item.fetch(:team_name) == team
@@ -155,6 +160,7 @@ def team_colors(team)
   #binding.pry
 end
 
+#
 def team_names
   names = []
   teams.each do |name|
