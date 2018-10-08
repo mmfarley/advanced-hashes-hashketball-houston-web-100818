@@ -186,7 +186,7 @@ def big_shoe_rebounds
   max = 0
   guy = ""
   people.each do |person|
-    #binding.pry
+    binding.pry
     t_guy = person.fetch(:player_name)
     temp = person.fetch(:shoe).to_i
     if temp > max
@@ -195,7 +195,7 @@ def big_shoe_rebounds
     end
   end
   rebound(guy)
-  #binding.pry
+  binding.pry
 end
 
 #function for getting rebounds
