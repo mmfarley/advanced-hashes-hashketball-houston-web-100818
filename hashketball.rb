@@ -143,6 +143,7 @@ end
 
 def teams
   game_hash.values_at(:away) + game_hash.values_at(:home)
+  #binding.pry
 end
 
 def team_colors(team)
